@@ -46,15 +46,42 @@ const CircularTimeline: React.FC<CircularTimelineProps> = ({ currentStep, onStep
 
   return (
     <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-      {/* Connection Lines */}
-      <div className={`connection-line w-24 h-24 rounded-tr-full border-l-0 border-b-0 top-16 right-16 ${currentStep >= 1 ? 'active' : ''}`}>
-        <div className="line-progress" />
-      </div>
-      <div className={`connection-line w-24 h-24 rounded-br-full border-l-0 border-t-0 bottom-16 right-16 ${currentStep >= 2 ? 'active' : ''}`}>
-        <div className="line-progress" />
-      </div>
-      <div className={`connection-line w-24 h-24 rounded-bl-full border-r-0 border-t-0 bottom-16 left-16 ${currentStep >= 3 ? 'active' : ''}`}>
-        <div className="line-progress" />
+      {/* Circular Connection Line */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg className="w-64 h-64 lg:w-72 lg:h-72 -rotate-90" viewBox="0 0 100 100">
+          {/* Background Circle */}
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="hsl(215, 27%, 32%)"
+            strokeWidth="0.5"
+            className="opacity-30"
+          />
+          {/* Progress Circle */}
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="url(#gradient)"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            strokeDasharray={`${(currentStep / 3) * 251.2} 251.2`}
+            className="transition-all duration-1000 ease-out"
+            style={{
+              filter: currentStep > 0 ? 'drop-shadow(0 0 8px hsla(249, 82%, 68%, 0.6))' : 'none'
+            }}
+          />
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(249, 82%, 68%)" />
+              <stop offset="50%" stopColor="hsl(251, 91%, 67%)" />
+              <stop offset="100%" stopColor="hsl(142, 76%, 36%)" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
       
       {/* Step Circles */}
