@@ -1,0 +1,160 @@
+import React, { useState, useEffect, useRef } from 'react';
+import StepZero from '../components/StepZero';
+import StepOne from '../components/StepOne';
+import StepTwo from '../components/StepTwo';
+import StepThree from '../components/StepThree';
+import '../styles/steps.css';
+
+const StepsPage = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const totalHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrollPercent = Math.min(scrollY / totalHeight, 1);
+      
+      setScrollProgress(scrollPercent);
+      
+      // More precise step transitions with exact boundaries
+      let newStep;
+      if (scrollPercent < 0.25) {
+        newStep = 0;
+      } else if (scrollPercent < 0.5) {
+        newStep = 1;
+      } else if (scrollPercent < 0.75) {
+        newStep = 2;
+      } else {
+        newStep = 3;
+      }
+
+      // Add transition state when step changes
+      if (newStep !== currentStep) {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentStep(newStep);
+          setIsTransitioning(false);
+        }, 150);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currentStep]);
+
+  return (
+    <div className="steps-container">
+      {/* Enhanced Background with more particles */}
+      <div className="fixed-background">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div
+            key={i}
+            className="floating-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`,
+              opacity: Math.random() * 0.6 + 0.2
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Fixed Main Content */}
+      <div className="fixed-main-content">
+        <div className="steps-layout">
+          {/* Left Side - Enhanced Timeline */}
+          <div className="timeline-side">
+            <div className="circular-timeline">
+              {/* Step Circles with individual active states */}
+              <div className={`step-circle step-0 ${currentStep === 0 ? 'active' : currentStep > 0 ? 'completed' : ''}`}>
+                <div className="circle-content">
+                  <span className="step-num">01</span>
+                  <span className="step-name">Create</span>
+                </div>
+                <div className="circle-glow"></div>
+              </div>
+
+              <div className={`step-circle step-1 ${currentStep === 1 ? 'active' : currentStep > 1 ? 'completed' : ''}`}>
+                <div className="circle-content">
+                  <span className="step-num">02</span>
+                  <span className="step-name">Simulate</span>
+                </div>
+                <div className="circle-glow"></div>
+              </div>
+
+              <div className={`step-circle step-2 ${currentStep === 2 ? 'active' : currentStep > 2 ? 'completed' : ''}`}>
+                <div className="circle-content">
+                  <span className="step-num">03</span>
+                  <span className="step-name">Feedback</span>
+                </div>
+                <div className="circle-glow"></div>
+              </div>
+
+              <div className={`step-circle step-3 ${currentStep === 3 ? 'active' : ''}`}>
+                <div className="circle-content">
+                  <span className="step-num">04</span>
+                  <span className="step-name">Track</span>
+                </div>
+                <div className="circle-glow"></div>
+              </div>
+
+              {/* Enhanced Connection Lines */}
+              <div className={`connection-line line-0-1 ${currentStep >= 1 ? 'active' : ''}`}>
+                <div className="line-progress"></div>
+              </div>
+              <div className={`connection-line line-1-2 ${currentStep >= 2 ? 'active' : ''}`}>
+                <div className="line-progress"></div>
+              </div>
+              <div className={`connection-line line-2-3 ${currentStep >= 3 ? 'active' : ''}`}>
+                <div className="line-progress"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Enhanced Content Area */}
+          <div className="content-side">
+            <div className={`content-container ${isTransitioning ? 'transitioning' : ''}`}>
+              <div className={`content-slide slide-0 ${currentStep === 0 ? 'active' : ''}`}>
+                <StepZero />
+              </div>
+
+              <div className={`content-slide slide-1 ${currentStep === 1 ? 'active' : ''}`}>
+                <StepOne />
+              </div>
+
+              <div className={`content-slide slide-2 ${currentStep === 2 ? 'active' : ''}`}>
+                <StepTwo />
+              </div>
+
+              <div className={`content-slide slide-3 ${currentStep === 3 ? 'active' : ''}`}>
+                <StepThree />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Enhanced CTA Button */}
+        {scrollProgress > 0.8 && (
+          <div className="cta-overlay animate-fade-in">
+            <button className="demo-cta-button">
+              <span className="play-icon">▶</span>
+              Request Demo
+              <div className="button-ripple"></div>
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Scroll spacer */}
+      <div className="scroll-spacer"></div>
+    </div>
+  );
+};
+
+export default StepsPage;
