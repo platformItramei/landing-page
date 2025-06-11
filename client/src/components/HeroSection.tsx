@@ -125,7 +125,7 @@ const HeroSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual */}
+          {/* Right Visual - Sales Call Simulation */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
@@ -136,80 +136,126 @@ const HeroSection: React.FC = () => {
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-3xl scale-75" />
               
-              {/* Hand Illustration */}
+              {/* Phone/Video Call Interface */}
               <motion.div
-                className="relative bg-background/50 backdrop-blur-sm rounded-3xl p-8 border border-border"
+                className="relative bg-background/90 backdrop-blur-sm rounded-3xl p-6 border border-border overflow-hidden"
                 animate={{ 
-                  y: [0, -10, 0],
-                  rotateY: [0, 5, 0]
+                  y: [0, -5, 0],
                 }}
                 transition={{ 
-                  duration: 4,
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
               >
-                <svg viewBox="0 0 200 200" className="w-full h-full">
-                  {/* Hand SVG */}
-                  <motion.path
-                    d="M100 50 L120 60 L130 80 L125 100 L110 110 L100 105 L90 110 L75 100 L70 80 L80 60 Z"
-                    fill="url(#handGradient)"
-                    stroke="hsl(var(--primary))"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 0.5 }}
-                  />
-                  
-                  {/* Success indicators */}
-                  {[...Array(3)].map((_, i) => (
-                    <motion.circle
-                      key={i}
-                      cx={120 + i * 15}
-                      cy={40 + i * 10}
-                      r="3"
-                      fill="hsl(var(--success))"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ 
-                        delay: 1 + i * 0.2,
-                        duration: 0.5,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        repeatDelay: 2
-                      }}
-                    />
-                  ))}
-                  
-                  <defs>
-                    <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(var(--primary))" />
-                      <stop offset="100%" stopColor="hsl(var(--secondary))" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                {/* Video Call Header */}
+                <div className="flex items-center justify-between mb-4 p-3 bg-muted/50 rounded-xl">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-success rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">Sales Simulation Active</span>
+                  </div>
+                  <div className="text-xs text-muted-foreground">02:47</div>
+                </div>
+
+                {/* Conversation Bubbles */}
+                <div className="space-y-4 mb-6">
+                  <motion.div
+                    className="bg-primary/10 p-3 rounded-xl rounded-bl-sm max-w-[80%]"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1 }}
+                  >
+                    <div className="text-xs text-primary font-medium mb-1">AI Customer</div>
+                    <div className="text-sm">"What makes your solution different?"</div>
+                  </motion.div>
+
+                  <motion.div
+                    className="bg-secondary/10 p-3 rounded-xl rounded-br-sm max-w-[80%] ml-auto"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.5 }}
+                  >
+                    <div className="text-xs text-secondary font-medium mb-1">Sales Rep</div>
+                    <div className="text-sm">"Great question! Let me show you..."</div>
+                  </motion.div>
+
+                  <motion.div
+                    className="bg-muted/50 p-2 rounded-xl text-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 2 }}
+                  >
+                    <div className="text-xs text-muted-foreground">AI analyzing response...</div>
+                  </motion.div>
+                </div>
+
+                {/* Performance Metrics */}
+                <div className="grid grid-cols-3 gap-3">
+                  <motion.div
+                    className="text-center p-2 bg-success/10 rounded-lg"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.5 }}
+                  >
+                    <div className="text-lg font-bold text-success">92%</div>
+                    <div className="text-xs text-muted-foreground">Confidence</div>
+                  </motion.div>
+                  <motion.div
+                    className="text-center p-2 bg-primary/10 rounded-lg"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.7 }}
+                  >
+                    <div className="text-lg font-bold text-primary">A+</div>
+                    <div className="text-xs text-muted-foreground">Response</div>
+                  </motion.div>
+                  <motion.div
+                    className="text-center p-2 bg-accent/10 rounded-lg"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.9 }}
+                  >
+                    <div className="text-lg font-bold text-accent">8.9</div>
+                    <div className="text-xs text-muted-foreground">Score</div>
+                  </motion.div>
+                </div>
               </motion.div>
 
-              {/* Floating Elements */}
-              {[...Array(5)].map((_, i) => (
+              {/* Floating Skill Indicators */}
+              {[
+                { label: "Objection Handling", icon: "🎯", position: { top: "10%", right: "10%" } },
+                { label: "Active Listening", icon: "👂", position: { top: "50%", left: "5%" } },
+                { label: "Value Proposition", icon: "💡", position: { bottom: "20%", right: "15%" } },
+                { label: "Closing Technique", icon: "🤝", position: { bottom: "10%", left: "10%" } }
+              ].map((skill, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl glassmorphism flex items-center justify-center"
-                  style={{
-                    top: `${20 + i * 15}%`,
-                    left: `${10 + (i % 2) * 80}%`,
-                  }}
+                  className="absolute bg-background/80 backdrop-blur-sm border border-border rounded-xl p-3 shadow-lg"
+                  style={skill.position}
                   animate={{
-                    y: [0, -15, 0],
-                    rotate: [0, 360],
+                    y: [0, -10, 0],
+                    scale: [1, 1.05, 1],
                   }}
                   transition={{
-                    duration: 3 + i * 0.5,
+                    duration: 2 + i * 0.3,
                     repeat: Infinity,
-                    delay: i * 0.2,
+                    delay: i * 0.5,
                   }}
                 >
-                  <div className="w-3 h-3 bg-gradient-to-br from-primary to-secondary rounded-full" />
+                  <div className="flex items-center space-x-2">
+                    <span className="text-lg">{skill.icon}</span>
+                    <div>
+                      <div className="text-xs font-medium">{skill.label}</div>
+                      <div className="w-16 h-1 bg-muted rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-primary to-secondary"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${Math.random() * 40 + 60}%` }}
+                          transition={{ delay: 3 + i * 0.2, duration: 1 }}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

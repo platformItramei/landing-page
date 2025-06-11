@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
+import ForgettingCurve from '@/components/ForgettingCurve';
 import UseCases from '@/components/UseCases';
 
 export default function SalesTrainingPage() {
@@ -9,6 +10,7 @@ export default function SalesTrainingPage() {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <ForgettingCurve />
       <UseCases />
       <Footer />
     </div>
