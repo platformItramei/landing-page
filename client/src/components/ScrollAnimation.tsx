@@ -69,7 +69,31 @@ const ScrollAnimation: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-[400vh]">
+    <section id="features" className="relative min-h-[400vh]">
+      {/* Section Header */}
+      <div className="relative z-20 py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="text-4xl lg:text-5xl font-bold text-gradient mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            How It Works
+          </motion.h2>
+          <motion.p
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Experience the complete sales training journey through our four-step process
+          </motion.p>
+        </div>
+      </div>
+
       {/* Scroll Progress Indicator */}
       <div 
         className="scroll-indicator"
@@ -131,7 +155,7 @@ const ScrollAnimation: React.FC = () => {
       
       {/* Scroll Spacer */}
       <div className="h-[400vh]" />
-    </div>
+    </section>
   );
 };
 
