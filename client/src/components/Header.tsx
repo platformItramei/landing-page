@@ -62,10 +62,10 @@ const Header: React.FC = () => {
             className="md:hidden bg-background border-t border-border"
           >
             <div className="py-4 space-y-4">
+              <a href="/" className="block text-muted-foreground hover:text-foreground transition-colors">Demo</a>
+              <a href="/sales-training" className="block text-muted-foreground hover:text-foreground transition-colors">Sales Training</a>
               <a href="#features" className="block text-muted-foreground hover:text-foreground transition-colors">Features</a>
-              <a href="#use-cases" className="block text-muted-foreground hover:text-foreground transition-colors">Use Cases</a>
               <a href="#pricing" className="block text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
-              <a href="#about" className="block text-muted-foreground hover:text-foreground transition-colors">About</a>
               <button className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg font-semibold">
                 Request Demo
               </button>
