@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Rocket, Users, Megaphone, TrendingUp } from 'lucide-react';
+import { Rocket, Users, Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface UseCase {
   id: number;
@@ -14,6 +14,14 @@ interface UseCase {
 
 const UseCases: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveCase((prev) => (prev + 1) % 3);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const useCases: UseCase[] = [
     {
@@ -79,7 +87,7 @@ const UseCases: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Use Case Navigation */}
+        {/* Fixed Use Case Headers */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {useCases.map((useCase, index) => {
             const IconComponent = useCase.icon;
@@ -113,7 +121,6 @@ const UseCases: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-2">{useCase.title}</h3>
-                    <p className="text-muted-foreground text-sm">{useCase.description}</p>
                   </div>
                 </div>
                 
@@ -130,6 +137,37 @@ const UseCases: React.FC = () => {
           })}
         </div>
 
+        {/* Carousel Controls */}
+        <div className="flex justify-center items-center gap-4 mb-8">
+          <button
+            onClick={() => setActiveCase((prev) => (prev - 1 + 3) % 3)}
+            className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          <div className="flex space-x-2">
+            {useCases.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveCase(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  activeCase === index 
+                    ? 'bg-primary scale-125' 
+                    : 'bg-muted hover:bg-primary/50'
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => setActiveCase((prev) => (prev + 1) % 3)}
+            className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
         {/* Active Use Case Content */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -140,90 +178,55 @@ const UseCases: React.FC = () => {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Content */}
-              <div className="space-y-6">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-gradient-to-br from-primary to-secondary rounded-lg">
-                    {React.createElement(useCases[activeCase].icon, { className: "w-5 h-5 text-white" })}
-                  </div>
-                  <h3 className="text-2xl font-bold">{useCases[activeCase].title}</h3>
-                </div>
-                
+            <div className="text-center max-w-4xl mx-auto">
+              {/* Description that changes */}
+              <motion.p 
+                key={activeCase}
+                className="text-xl text-muted-foreground leading-relaxed mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                {useCases[activeCase].description}
+              </motion.p>
+
+              {/* Detailed content */}
+              <motion.div
+                key={`details-${activeCase}`}
+                className="space-y-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {useCases[activeCase].details}
                 </p>
 
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-foreground">Key Benefits:</h4>
-                  <ul className="space-y-2">
-                    {useCases[activeCase].benefits.map((benefit, index) => (
-                      <motion.li
-                        key={index}
-                        className="flex items-center space-x-3"
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                        <span className="text-muted-foreground">{benefit}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                  {useCases[activeCase].benefits.map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-center space-x-3 p-4 bg-muted/30 rounded-xl"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                    >
+                      <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full" />
+                      <span className="text-muted-foreground">{benefit}</span>
+                    </motion.div>
+                  ))}
                 </div>
 
                 <motion.button
-                  className="mt-6 px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-semibold hover:scale-105 transition-transform"
+                  className="mt-8 px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-semibold hover:scale-105 transition-transform"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Learn More
                 </motion.button>
-              </div>
-
-              {/* Visual Element */}
-              <div className="relative">
-                <motion.div
-                  className="relative aspect-square max-w-md mx-auto"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
-                  <div className="relative bg-gradient-to-br from-background to-muted rounded-3xl p-8 border border-border">
-                    <div className="space-y-4">
-                      {/* Simulation visualization */}
-                      <div className="flex items-center justify-between p-4 bg-muted/50 rounded-xl">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full" />
-                          <span className="font-medium">AI Trainer</span>
-                        </div>
-                        <div className="text-sm text-muted-foreground">Active</div>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        {[...Array(3)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            className="h-3 bg-gradient-to-r from-primary/30 to-transparent rounded-full"
-                            style={{ width: `${Math.random() * 60 + 40}%` }}
-                            initial={{ width: 0 }}
-                            animate={{ width: `${Math.random() * 60 + 40}%` }}
-                            transition={{ delay: i * 0.2, duration: 1 }}
-                          />
-                        ))}
-                      </div>
-                      
-                      <div className="pt-4 border-t border-border">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Progress</span>
-                          <span className="font-medium">87%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </AnimatePresence>

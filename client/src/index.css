@@ -13,9 +13,9 @@
   --card-foreground: hsl(210, 40%, 98%);
   --border: hsl(215, 27%, 32%);
   --input: hsl(215, 27%, 32%);
-  --primary: hsl(249, 82%, 68%);
+  --primary: hsl(217, 91%, 60%);
   --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(251, 91%, 67%);
+  --secondary: hsl(214, 95%, 67%);
   --secondary-foreground: hsl(210, 40%, 98%);
   --accent: hsl(43, 96%, 56%);
   --accent-foreground: hsl(222, 84%, 5%);
@@ -23,7 +23,7 @@
   --destructive-foreground: hsl(210, 40%, 98%);
   --success: hsl(142, 76%, 36%);
   --success-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(249, 82%, 68%);
+  --ring: hsl(217, 91%, 60%);
   --radius: 0.5rem;
 }
 
@@ -38,9 +38,9 @@
   --card-foreground: hsl(210, 40%, 98%);
   --border: hsl(215, 27%, 32%);
   --input: hsl(215, 27%, 32%);
-  --primary: hsl(249, 82%, 68%);
+  --primary: hsl(217, 91%, 60%);
   --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(251, 91%, 67%);
+  --secondary: hsl(214, 95%, 67%);
   --secondary-foreground: hsl(210, 40%, 98%);
   --accent: hsl(43, 96%, 56%);
   --accent-foreground: hsl(222, 84%, 5%);
@@ -48,7 +48,7 @@
   --destructive-foreground: hsl(210, 40%, 98%);
   --success: hsl(142, 76%, 36%);
   --success-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(249, 82%, 68%);
+  --ring: hsl(217, 91%, 60%);
 }
 
 @layer base {
