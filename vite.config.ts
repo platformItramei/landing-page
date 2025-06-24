@@ -25,9 +25,16 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
+    port: 5173,
+    host: "0.0.0.0",
+    allowedHosts: [
+      "https://landing-page-162888271972.europe-north1.run.app",
+      "www.itramei.com",
+      "itramei.com",
+      "itramei"
+    ],
   },
+  preview: {
+    port: 5173,
+  }
 });
