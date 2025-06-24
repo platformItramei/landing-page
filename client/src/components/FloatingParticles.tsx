@@ -20,7 +20,7 @@ const FloatingParticles: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 gradient-bg">
+    <div className="fixed inset-0 pointer-events-none z-0">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}

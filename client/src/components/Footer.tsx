@@ -1,94 +1,82 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
+import itrameicon from '../img/Itrameicon.png';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-muted/50 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-muted/50 mt-22 border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 sm:w-10 sm:h-10 bg-gradient-to-br to-secondary rounded-lg flex items-center justify-center">
+                <img src={itrameicon} alt="itramei icon" className="w-10 h-10 sm:w-8 sm:h-8" />
               </div>
-              <span className="text-xl font-bold text-foreground">Itramei</span>
+              <span className="text-lg sm:text-lg font-bold text-foreground">Itramei</span>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              Transform your sales team with AI-powered simulation training. Practice makes perfect, without the risk.
-            </p>
-            <div className="flex space-x-4">
-              <motion.a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Linkedin className="w-5 h-5" />
-              </motion.a>
-              <motion.a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Twitter className="w-5 h-5" />
-              </motion.a>
-            </div>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Itramei. All rights reserved.
+              </p>
           </div>
 
-          {/* Product */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Product</h3>
+          {/* Navigation */}
+          {/* <div className="space-y-3 sm:space-y-4">
+            <h3 className="font-semibold text-sm sm:text-base text-foreground">Navigation</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Simulations</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Analytics</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Integrations</a></li>
+              <li><a href="#" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Home</a></li>
+              <li><a href="#features" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
+              <li><a href="#use-cases" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Use Cases</a></li>
+              <li><a href="#request-demo-form" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Request Demo</a></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Solutions */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Solutions</h3>
+          <div className="space-y-6 sm:space-y-8">
+            <h3 className="font-semibold text-sm sm:text-base text-foreground">Policy</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Rapid Onboarding</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Upskilling Sellers</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Scaleable Enablement</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Enterprise</a></li>
+              <li><a className="text-sm text sm:text-base text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Contact</h3>
+          {/* social media  */}
+          <div className="space-y-6 sm:space-y-8">
+            <h3 className="font-semibold text-sm sm:text-base text-foreground">Socials</h3>
             <ul className="space-y-2">
-              <li className="flex items-center space-x-2 text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <span>hello@itramei.com</span>
+              <li>
+                <motion.a
+                  href="#"
+                  className="inline-flex items-center space-x-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors leading-none"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span>LinkedIn</span>
+                </motion.a>
               </li>
-              <li className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+            </ul>
+          </div>
+
+
+
+          {/* Contact */}
+          <div className="space-y-3 sm:space-y-4">
+            <h3 className="font-semibold text-sm sm:text-base text-foreground">Contact</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start sm:items-center space-x-2 text-muted-foreground">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                <span className="text-sm sm:text-base">contact@itramei.com</span>
               </li>
-              <li className="flex items-start space-x-2 text-muted-foreground">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                <span>San Francisco, CA</span>
+              <li className="flex items-start sm:items-center space-x-2 text-muted-foreground">
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Dublin, Ireland</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
-            © 2024 Itramei. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Cookie Policy</a>
-          </div>
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8  flex flex-col md:flex-row justify-between items-center">
+
         </div>
       </div>
     </footer>
