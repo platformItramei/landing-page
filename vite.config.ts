@@ -14,10 +14,19 @@ export default defineConfig({
     minify: "esbuild",
     outDir: "dist",
   },
-  // server: {
-  //   port: 5173,
-  //   host: "0.0.0.0",
-  // },
+  server: {
+    port: 5173,
+    host: "0.0.0.0",
+      allowedHosts: [
+        "https://itramei-landing-page-prod-162888271972.europe-north1.run.app",
+        "itramei-landing-page-prod-162888271972.europe-north1.run.app",
+        "www.itramei.com",
+        "itramei.com",
+        "itramei",
+        "www.itramei.ai",
+        "itramei.ai",
+      ]
+  },
   preview: {
     port: 5173,
   }
