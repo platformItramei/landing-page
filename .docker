@@ -1,16 +1,15 @@
 FROM node:20 AS builder
 
-WORKDIR /usr/src/app
+# Use current directory (.) as WORKDIR
+WORKDIR /build
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci --force
 COPY . .
 RUN npm run build
 
 FROM node:20
-
-WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/dist ./dist
-COPY package.json ./
+WORKDIR /app
+COPY --from=builder /build/dist ./dist
 RUN npm install -g serve
 
 ENV PORT=5174
