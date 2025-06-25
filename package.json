@@ -9,9 +9,6 @@
     "preview": "vite preview",
     "serve": "npm run build && serve -s dist -l 5174"
   },
-  "resolutions": {
-    "@rollup/rollup-linux-x64-gnu": "3.29.4"
-  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
