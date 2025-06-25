@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
- "scripts": {
-  "dev": "cd client && vite --host 0.0.0.0 --port 5173",
-  "build": "cd client && vite build",
-  "preview": "cd client && vite preview",
-  "serve": "cd client && npm run build && npx serve -s dist -l 5173"
+"scripts": {
+  "dev": "vite --host 0.0.0.0 --port 5173",
+  "build": "vite build",
+  "preview": "vite preview",
+  "serve": "serve -s dist -l 5173"
 },
   "engines": {
     "node": "20.x"
