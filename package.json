@@ -4,14 +4,11 @@
   "type": "module",
   "license": "MIT",
 "scripts": {
-  "dev": "vite --host 0.0.0.0 --port 5173",
+  "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
   "serve": "serve -s dist -l 5173"
 },
-  "engines": {
-    "node": "20.x"
-  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
