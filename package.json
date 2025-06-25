@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-"scripts": {
-  "dev": "npm run build && serve -s dist -l 5174",
-  "build": "vite build",
-  "preview": "vite preview",
-  "serve": "npm run build && serve -s dist -l 5174"
-},
+  "scripts": {
+    "dev": "npm run build && serve -s dist -l 5174",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "npm run build && serve -s dist -l 5174"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
@@ -91,6 +91,7 @@
     "autoprefixer": "^10.4.20",
     "drizzle-kit": "^0.30.4",
     "esbuild": "^0.25.0",
+    "npm-force-resolutions": "^0.0.10",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.1",
@@ -98,7 +99,7 @@
     "vite": "^5.3.1",
     "vite-plugin-remove-console": "^2.2.0"
   },
-  "optionalDependencies": {
-    "bufferutil": "^4.0.8"
+  "resolutions": {
+    "@rollup/rollup-linux-x64-gnu": "^3.29.4"
   }
 }
