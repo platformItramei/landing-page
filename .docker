@@ -1,10 +1,20 @@
 FROM node:20 AS builder
 
-# Use current directory (.) as WORKDIR
 WORKDIR /build
+
+# 1. Update npm to latest version to fix known bugs
+RUN npm install -g npm@latest
+
+# 2. Copy only package files first
 COPY package.json package-lock.json ./
+
+# 3. Clean install with forced optional dependencies
 RUN npm ci --force
+
+# 4. Copy source files
 COPY . .
+
+# 5. Build with specific environment variables
 RUN npm run build
 
 FROM node:20
