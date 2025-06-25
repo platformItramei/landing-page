@@ -1,1 +1,1 @@
-web: npx serve -s dist -l 5173
+web: npx serve -s dist -l 5174
