@@ -4,10 +4,10 @@
   "type": "module",
   "license": "MIT",
 "scripts": {
-  "dev": "vite --host 0.0.0.0 --port 5174",
+  "dev": "npm run build && serve -s dist -l 5174",
   "build": "vite build",
   "preview": "vite preview",
-  "serve": "serve -s dist -l 5174"
+  "serve": "npm run build && serve -s dist -l 5174"
 },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
