@@ -41,9 +41,9 @@ export default function BuiltForYou() {
               {roles.map((role, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                  initial={{ opacity: 0, scale: 0.65, y: 30 }}
                   animate={isVisible ? { opacity: 1, scale: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.9, duration: 0.95, ease: "easeOut" }}
+                  transition={{ delay: index * 0.4, duration: 0.45, ease: "easeOut" }}
                   className="bg-gradient-to-br border border-gray-700/40 rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 md:p-8 premium-shadow"
                 >
                   <div className="text-center">

@@ -20,9 +20,13 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-12 h-12 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-gradient-to-br to-secondary rounded-lg flex items-center justify-center">
-              <img 
-                src={itrameicon} 
+            <div className="w-12 h-12 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-gradient-to-br to-secondary rounded-lg flex items-center justify-center cursor-pointer ">
+              <img
+                onClick={() =>
+
+                  document.getElementById("hero-section")?.scrollIntoView({behavior: "auto",block: "start",})
+                }
+                src={itrameicon}
                 alt="itramei icon" 
                 className="w-12 h-12 sm:w-8 sm:h-8 md:w-10 md:h-10"
               />
