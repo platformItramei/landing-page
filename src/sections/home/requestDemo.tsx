@@ -55,7 +55,6 @@ const RequestDemoSection = ({ onDemoSubmit }: RequestDemoSectionProps) => {
 
   const demoRequestMutation = useMutation({
     mutationFn: async (data: FullFormData) => {
-      // Step 1: Fetch auth token
 
       console.log(import.meta.env.VITE_BACKEND_BASE_URL);
       const auth = await apiRequest(
@@ -70,7 +69,6 @@ const RequestDemoSection = ({ onDemoSubmit }: RequestDemoSectionProps) => {
       const authJson = await auth.json();
       const token = authJson?.data?.token;
   
-      // Step 2: Prepare payload
       const payload = {
         type: "business",
         comments: data.comments,
@@ -91,9 +89,6 @@ const RequestDemoSection = ({ onDemoSubmit }: RequestDemoSectionProps) => {
 
       const epayload = await cryptos.encrypt(payload, backendPublicKey);
 
-
-      // Step 3: Make authorized request with token
-
       
       const response = await apiRequest(
         'POST',
@@ -103,7 +98,7 @@ const RequestDemoSection = ({ onDemoSubmit }: RequestDemoSectionProps) => {
       );
 
   
-      return response.json(); // Ensure the mutation resolves a usable JSON value
+      return response.json(); 
     },
   
     onSuccess: (data) => {
@@ -111,6 +106,7 @@ const RequestDemoSection = ({ onDemoSubmit }: RequestDemoSectionProps) => {
         title: "Demo Request Submitted!",
         description: "Thank you! for your interest, one of our team members will reach out to you soon.",
       });
+      fullForm.reset();
       onDemoSubmit(data);
     },
   
