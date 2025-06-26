@@ -16,27 +16,26 @@ const Footer: React.FC = () => {
               </div>
               <span className="text-lg sm:text-lg font-bold text-foreground">Itramei</span>
             </div>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Itramei. All rights reserved.
-              </p>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Itramei. All rights reserved.
+            </p>
           </div>
 
-          {/* Navigation */}
-          {/* <div className="space-y-3 sm:space-y-4">
-            <h3 className="font-semibold text-sm sm:text-base text-foreground">Navigation</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Home</a></li>
-              <li><a href="#features" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
-              <li><a href="#use-cases" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Use Cases</a></li>
-              <li><a href="#request-demo-form" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors">Request Demo</a></li>
-            </ul>
-          </div> */}
-
-          {/* Solutions */}
+          {/* Policy */}
           <div className="space-y-6 sm:space-y-8">
             <h3 className="font-semibold text-sm sm:text-base text-foreground">Policy</h3>
             <ul className="space-y-2">
-              <li><a className="text-sm text sm:text-base text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
+              <li>
+                <motion.a
+                  href="https://app.termly.io/policy-viewer/policy.html?policyUUID=6ce288ef-d8d6-4a7e-bb9c-bcfe35c9aa13"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-sm sm:text-base text-muted-foreground hover:text-primary cursor-pointer transition-colors leading-none"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span>Privacy Policy</span>
+                </motion.a>
+              </li>
             </ul>
           </div>
 
@@ -46,7 +45,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/company/itramei/" target="_blank"
                   className="inline-flex items-center space-x-2 text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors leading-none"
                   whileHover={{ scale: 1.05 }}
                 >
@@ -57,15 +56,16 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-
-
           {/* Contact */}
           <div className="space-y-3 sm:space-y-4">
             <h3 className="font-semibold text-sm sm:text-base text-foreground">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-start sm:items-center space-x-2 text-muted-foreground">
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4 mt-0.5 sm:mt-0 flex-shrink-0" />
-                <span className="text-sm sm:text-base">contact@itramei.com</span>
+                <a href="mailto:contact@itramei.com">
+                  <span className="text-sm sm:text-base">contact@itramei.com</span>
+                </a>
+                  
               </li>
               <li className="flex items-start sm:items-center space-x-2 text-muted-foreground">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mt-0.5 sm:mt-0 flex-shrink-0" />
