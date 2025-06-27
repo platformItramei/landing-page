@@ -21,17 +21,29 @@ export default function HomePage() {
     setShowEmailModal(true);
   };
 
+
+// This order:
+// 1.Homepage
+// 2. What Is Your Enablement Effort Worth Without Adoption?
+// 3.Key benefits overview
+// 4.How it works
+// 5.Usecases
+// 6.Itramei vs traditional
+// 7.Itramei is built for you
+// 8.Flexable integration
+// 9.FQA
+// 10.Final CTA
   
   return (
     <div className="min-h-screen">
       <Header />
       <HeroSection />
       <Enablement/>
-      <KeyBenefitsOverview/>
-      <Works/>
-      <BuiltForYou/>
-      <Comparison/>
       <UseCases />
+      <Works/>
+      <KeyBenefitsOverview/>
+      <Comparison/>
+      <BuiltForYou/>
       <Integreations/>
       <Faq/>
       <RequestDemoSection onDemoSubmit={handleDemoSubmit} />
