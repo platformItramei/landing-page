@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 
 interface CircularTimelineProps {
   currentStep: number;
+  progress: number;
 }
 
-const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
+const CircularTimeline = ({ currentStep, progress }: CircularTimelineProps) => {
   const steps = [
     { num: '01', name: 'Create', color: 'success' },
     { num: '02', name: 'Simulate', color: 'primary' },
@@ -44,7 +45,7 @@ const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
 
   return (
     <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
-      {/* SVG Circle */}
+      {/* Line*/}
       <div className="absolute inset-0 flex items-center justify-center">
         <svg className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 -rotate-90" viewBox="0 0 100 100">
           <circle
@@ -56,7 +57,7 @@ const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
             strokeWidth="0.5"
             className="opacity-30"
           />
-          <circle
+          <motion.circle
             cx="50"
             cy="50"
             r="40"
@@ -64,8 +65,10 @@ const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
             stroke="url(#gradient)"
             strokeWidth="0.8"
             strokeLinecap="round"
-            strokeDasharray={`${(currentStep / 3) * 251.2} 251.2`}
-            className="transition-all duration-1000 ease-out"
+            strokeDasharray={`${progress * 251.2} 251.2`}
+            initial={false}
+            animate={{ strokeDasharray: `${progress * 251.2} 251.2` }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{
               filter: currentStep > 0 ? 'drop-shadow(0 0 8px hsl(217, 91%, 60%))' : 'none',
             }}
@@ -95,8 +98,8 @@ const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
               boxShadow: isActive
                 ? '0 0 20px hsl(217, 91%, 60%)'
                 : isCompleted
-                ? '0 0 10px hsla(142, 76%, 36%, 0.5)'
-                : 'none',
+                  ? '0 0 10px hsla(142, 76%, 36%, 0.5)'
+                  : 'none',
             }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
@@ -106,8 +109,8 @@ const CircularTimeline = ({ currentStep }: CircularTimelineProps) => {
                 background: isActive
                   ? 'linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(214, 95%, 67%) 100%)'
                   : isCompleted
-                  ? 'linear-gradient(135deg, hsl(160, 58%, 52%) 0%, hsla(162, 61%, 34%, 0.7) 100%)'
-                  : 'transparent',
+                    ? 'linear-gradient(135deg, hsl(160, 58%, 52%) 0%, hsla(162, 61%, 34%, 0.7) 100%)'
+                    : 'transparent',
               }}
               animate={{ opacity: isActive ? 1 : isCompleted ? 0.8 : 0 }}
             />

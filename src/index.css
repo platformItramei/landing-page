@@ -204,7 +204,7 @@
   top: 0;
   left: 0;
   height: 4px;
-  background: linear-gradient(90deg, hsl(249, 82%, 68%), hsl(251, 91%, 67%));
+  background: linear-gradient(125deg,rgba(35, 195, 255, 1), rgba(0, 128, 255, 0.6));
   z-index: 50;
   transition: width 0.3s ease;
 }
