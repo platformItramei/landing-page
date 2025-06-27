@@ -68,7 +68,7 @@ const ScrollAnimation: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Experience the Future of Sales Readiness in 4 Steps
+            Sales Excellence in 4 Steps
           </motion.h2>
         </div>
       </div>

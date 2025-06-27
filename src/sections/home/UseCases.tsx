@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const useCases = [
   {
     id: "rapid-onboarding",
-    title: "Onboard New Reps in Record Time",
+    title: "Onboard in Record Time",
     description:
       "Accelerate ramp-up for new sales hires with immersive role-play training. Reps engage in realistic phone and video call simulations from day one, shortening the time it takes to become fully productive.",
     gradient: "from-electric-blue/20 to-glow-purple/10",
   },
   {
     id: "upskilling-sellers",
-    title: "Continuously Sharpen Sales Skills",
+    title: "Sharpen Senior Sales Executives",
     description:
       "Enable your team to practice handling objections, pitching, and discovery in a risk-free environment. Regular simulated calls and AI-driven feedback turn training into an ongoing process.",
     gradient: "from-glow-purple/20 to-electric-blue/10",

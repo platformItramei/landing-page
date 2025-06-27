@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const roles = [
   {
-    title: "Onboard New Sales Reps Faster and Smarter",
+    title: "Onboard Faster and Smarter",
     description: "Let new hires simulate real calls from day one. Itramei shortens ramp time by letting reps practice product messaging, discovery questions, and objection handling before they ever talk to a real prospect.",
   },
   {

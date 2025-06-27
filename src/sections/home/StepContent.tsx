@@ -77,7 +77,7 @@ const StepContent: React.FC<StepContentProps> = ({ currentStep, isTransitioning 
     {
       icon: TrendingUp,
       step: 'Step 3 of 4',
-      title: 'Get Personalized Feedback',
+      title: 'Gain Objective Feedback',
       description: `Immediately after each session, Itramei analyzes the conversation and delivers a personalized report. Reps see what they did well, where to improve, and get a fully annotated transcript with AI-generated insights like missed reframes, filler words, and suggested learning content.`,
       progress: [
         { label: 'Vocal Variety', value: 87, color: 'success' },
