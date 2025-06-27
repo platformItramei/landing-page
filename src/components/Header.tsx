@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                 <Button
                   onClick={() => {
                     setIsMenuOpen(false);
-                    document.getElementById("request-demo-form")?.scrollIntoView({behavior: "auto",block: "start",});
+                    window.open('https://www.itramei.ai/', '_blank');
                   }}
                   className="w-full py-3 text-sm sm:text-base"
                   variant="outline"
