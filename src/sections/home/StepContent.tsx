@@ -62,7 +62,7 @@ const StepContent: React.FC<StepContentProps> = ({ currentStep, isTransitioning 
       icon: MessageCircle,
       step: 'Step 1 of 4',
       title: 'Create Simulation',
-      description: `Enablement can create and invite the entire org in a click and Reps can simulate any meeting before hand to hone their skill. Whether it's a phone or video call, from discovery to post sales, Itramei simulation feels like the real thing complete with tough questions and curveball objections.`,
+      description: `Enablement can create and invite the entire org with one click, and reps can simulate any meeting beforehand to hone their skills. Whether it's a phone or video call, from discovery to post sales, Itramei simulation feels like the real thing complete with tough questions and curveball objections.`,
     },
     {
       icon: Phone,
