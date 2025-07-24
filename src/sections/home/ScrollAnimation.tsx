@@ -1,3 +1,4 @@
+// ScrollAnimation.tsx
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CircularTimeline from './CircularTimeline';
@@ -52,13 +53,25 @@ const ScrollAnimation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [currentStep]);
 
+  const handleStepClick = (stepIndex: number) => {
+    setCurrentStep(stepIndex);
+
+    if (sectionRef.current) {
+      const sectionTop = sectionRef.current.offsetTop;
+      const sectionHeight = sectionRef.current.offsetHeight;
+      const stepOffsets = [0, 0.3, 0.5, 0.7];
+      const targetScrollY = sectionTop + sectionHeight * stepOffsets[stepIndex];
+
+      window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
       id="features"
       className="relative bg-background"
     >
-      {/* Section header */}
       <div className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
@@ -73,36 +86,18 @@ const ScrollAnimation: React.FC = () => {
         </div>
       </div>
 
-      {/* Tall scroll area to allow animation within section */}
       <div className="relative h-[450vh] min-h-[800vh] md:h-[600vh]">
-        {/*  scroll progress bar Ask Neda */}
-        {/* <div
-          className="scroll-indicator"
-          style={{
-            width: `${Math.min(currentStep, 3) * 25}%`,
-            height: '4px',
-            background: '#0ea5e9',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 50,
-            transition: 'width 0.3s ease',
-          }}
-        /> */}
-
-        {/* Sticky content */}
         <div className="sticky top-20 h-screen flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-7xl mx-auto h-full flex items-center">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center w-full">
-              {/* Left: Circular Timeline */}
               <div className="flex items-center justify-center">
                 <CircularTimeline
                   currentStep={currentStep}
                   progress={scrollProgress}
+                  onStepClick={handleStepClick}
                 />
               </div>
 
-              {/* Right: Step content */}
               <div className="relative">
                 <StepContent
                   currentStep={currentStep}
@@ -118,3 +113,9 @@ const ScrollAnimation: React.FC = () => {
 };
 
 export default ScrollAnimation;
+
+export interface CircularTimelineProps {
+  currentStep: number;
+  progress: number;
+  onStepClick: (stepIndex: number) => void;
+}
