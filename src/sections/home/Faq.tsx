@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const faqs = [
   {
@@ -51,12 +52,35 @@ export default function FAQ() {
   const { ref, isVisible } = useScrollAnimation();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
+    
     <div className="min-h-screen bg-gray-950 text-white">
+      <Helmet>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        </Helmet>
+
       <div className="pt-32 pb-20 px-8">
         <div className="max-w-4xl mx-auto">
           <div
