@@ -170,7 +170,7 @@ export default function BuiltForYou() {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Sales Training Use Cases - Itramei",
-              "description": "Discover how Itramei addresses key sales challenges through AI-powered training simulations",
+              "description": "Discover how Itramei addresses key sales challenges through AI-powered training simulations. Top performers get advanced coaching, consistent messaging, and growth support. Let's empower your sales team with the tools they need to succeed.",
               "url": "https://itramei.com/use-cases",
               "publisher": {
                 "@type": "Organization",

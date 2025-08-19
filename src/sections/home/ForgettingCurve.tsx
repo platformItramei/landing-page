@@ -20,7 +20,7 @@ export default function ForgettingCurve() {
         <meta property="og:url" content="https://itramei.com/forgetting-curve" />
         <meta property="og:title" content="Combat the Ebbinghaus Forgetting Curve | Itramei Sales Training" />
         <meta property="og:description" content="84% of sales training knowledge is lost in 7 days without reinforcement. Itramei helps sales teams retain critical skills through AI-powered practice." />
-        <meta property="og:image" content="https://itramei.com/forgetting-curve-og-image.jpg" />
+        <meta property="og:image" content="https://itramei.com" />
         <meta property="og:site_name" content="Itramei" />
         
         <meta name="author" content="Itramei - Sales Training Platform" />
