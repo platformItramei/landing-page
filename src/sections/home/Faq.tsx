@@ -128,7 +128,7 @@ export default function FAQ() {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://www.itramei.com/faq" />
+        <link rel="canonical" href="https://www.itramei.com/" />
 
         {/* FAQ Schema JSON-LD */}
         <script

@@ -1,6 +1,7 @@
 import React from 'react';
 import { color, motion } from 'framer-motion';
 import { Play, ArrowRight, Percent } from 'lucide-react';
+import {Helmet} from "react-helmet";
 
 const colorMap: Record<string, string> = {
   primary: 'from-blue-500 to-blue-500',
@@ -9,6 +10,74 @@ const colorMap: Record<string, string> = {
   accent: 'from-pink-500 to-pink-500',
   red: 'from-red-600 to-red-600',
 };
+
+<Helmet>
+<title>Itramei - AI Sales Training Simulation Platform | Master Sales Calls</title>
+<meta name="description" content="Itramei's AI-powered sales training platform helps sales teams practice calls with simulated customers. Improve objection handling, active listening, and closing techniques risk-free." />
+<meta name="keywords" content="sales training, role play, communication skills, sales simulation, AI sales training, objection handling, active listening, sales coaching, sales performance, customer communication" />
+<meta name="robots" content="index, follow" />
+
+{/* Open Graph / Facebook */}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://itramei.com/" />
+<meta property="og:title" content="Itramei - AI Sales Training Simulation Platform" />
+<meta property="og:description" content="Practice sales calls with AI-powered simulations. Master objection handling, active listening, and closing techniques without risking real customers. Top 10 communication and sales training platform" />
+<meta property="og:image" content="https://itramei.com/og-image.jpg" />
+
+{/* Twitter */}
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://itramei.com/" />
+<meta property="twitter:title" content="Itramei - AI Sales Training Simulation Platform" />
+<meta property="twitter:description" content="Practice sales calls with AI-powered simulations. Master objection handling, active listening, and closing techniques without risking real customers." />
+<meta property="twitter:image" content="https://itramei.com/twitter-image.jpg" />
+
+{/* Additional important tags */}
+<meta name="author" content="Itramei" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://itramei.com/" />
+
+{/* Structured data for better SEO */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Itramei",
+      "url": "https://itramei.com/",
+      "logo": "https://itramei.com/",
+      "description": "AI-powered sales top training simulation platform",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "City",
+        "addressCountry": "Country"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/itramei",
+        "https://www.facebook.com/profile.php?id=61562944268204"
+      ]
+    })
+  }}
+/>
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Itramei Sales Training Simulation",
+      "image": "https://itramei.com/",
+      "description": "AI-powered sales top training simulation platform",
+      "brand": {
+        "@type": "Brand",
+        "name": "Itramei"
+      }
+    })
+  }}
+/>
+</Helmet>
+
 
 const HeroSection: React.FC = () => {
   return (
