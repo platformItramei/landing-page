@@ -86,10 +86,6 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <Helmet>
-        {/* ✅ SEO Meta Tags */}
-        <title>
-          Top Roleplay & Communication Training Platform | Itramei FAQ
-        </title>
         <meta
           name="description"
           content="Explore Itramei's AI-powered FAQ: one of the top roleplay and communication training platforms for sales teams. Learn how simulations, feedback, and onboarding accelerate performance."
