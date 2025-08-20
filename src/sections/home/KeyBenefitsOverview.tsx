@@ -29,7 +29,7 @@ export default function BuiltForYou() {
   return (
     <>
       <Helmet>
-        <title>Sales Training Use Cases | Onboarding, Coaching & Development | Itramei</title>
+        {/* <title>Sales Training Use Cases | Onboarding, Coaching & Development | Itramei</title> */}
         <meta name="description" content="Itramei addresses key sales challenges: faster onboarding, consistent messaging, scalable coaching, and senior rep development. See how our AI sales training platform helps." />
         <meta name="keywords" content="sales training use cases, sales onboarding, sales coaching, sales enablement, sales messaging, sales development, sales ramp time, sales performance, AI sales training" />
         <meta name="robots" content="index, follow" />

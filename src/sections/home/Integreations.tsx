@@ -31,7 +31,7 @@ export default function Integrations() {
   return (
     <>
       <Helmet>
-        <title>Itramei Integrations | Connect with 100+ Sales & Communication Tools</title>
+        {/* <title>Itramei Integrations | Connect with 100+ Sales & Communication Tools</title> */}
         <meta name="description" content="Itramei integrates seamlessly with HubSpot, Salesforce, Slack, Zoom, and 100+ sales and communication tools. Connect your entire tech stack for better sales training." />
         <meta name="keywords" content="sales tool integrations, CRM integration, communication platform, sales training software, HubSpot integration, Salesforce integration, Slack integration, Zoom integration, sales tech stack, communication tools" />
         <meta name="robots" content="index, follow" />

@@ -11,7 +11,7 @@ export default function ForgettingCurve() {
   return (
     <>
       <Helmet>
-        <title>Ebbinghaus Forgetting Curve | Sales Training Retention Solutions | Itramei</title>
+        {/* <title>Ebbinghaus Forgetting Curve | Sales Training Retention Solutions | Itramei</title> */}
         <meta name="description" content="Combat the Ebbinghaus Forgetting Curve with Itramei's sales training platform. 84% of knowledge is lost in just 7 days without proper reinforcement." />
         <meta name="keywords" content="Ebbinghaus forgetting curve, sales training retention, knowledge retention, sales training effectiveness, training reinforcement, memory retention, sales skills retention, training ROI" />
         <meta name="robots" content="index, follow" />
