@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-
+          {/* https://www.facebook.com/profile.php?id=61562944268204 */}
           {/* Contact */}
           <div className="space-y-3 sm:space-y-4">
             <h3 className="font-semibold text-sm sm:text-base text-foreground">Contact</h3>

@@ -2,7 +2,6 @@ import { useScrollAnimation } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import { Check, X } from "lucide-react";
-import { features } from "process";
 
 const comparisonData = [
   {
