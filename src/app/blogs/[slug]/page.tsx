@@ -2,13 +2,7 @@ import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogPosts";
 import Link from "next/link";
 
-interface BlogDetailPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export async function generateMetadata({ params }: BlogDetailPageProps) {
+export async function generateMetadata({ params }: { params: any }) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
   if (!blog) return {};
 
@@ -28,7 +22,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps) {
   };
 }
 
-export default function BlogDetailPage({ params }: BlogDetailPageProps) {
+export default function BlogDetailPage({ params }: { params: any }) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
 
   if (!blog) return notFound();
@@ -49,8 +43,6 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
         <Link href="/blogs" className="inline-block mt-8 text-purple-400 hover:text-purple-300">
           ← Back to Blogs
         </Link>
-        <br />
-        <br />
       </article>
     </main>
   );
