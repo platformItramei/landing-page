@@ -2,7 +2,13 @@ import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogPosts";
 import Link from "next/link";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+interface BlogDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: BlogDetailPageProps) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
   if (!blog) return {};
 
@@ -22,7 +28,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
+export default function BlogDetailPage({ params }: BlogDetailPageProps) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
 
   if (!blog) return notFound();
