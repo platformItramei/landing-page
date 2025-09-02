@@ -1,4 +1,3 @@
-"use client";
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -9,10 +8,19 @@ import Footer from "@/components/Footer";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 
-// export const metadata: Metadata = {
-//   title: "Itramei – Master Every Sales Call",
-//   description: "Practice without risking revenue.",
-// };
+export const metadata = {
+  title: "Itramei – Master Every Sales Call",
+  description: "Practice without risking revenue.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "mask-icon",
+      url: "/safari-pinned-tab.svg",
+      color: "#0A84FF", 
+    },
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
