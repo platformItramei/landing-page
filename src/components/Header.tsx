@@ -65,6 +65,18 @@ const Header: React.FC = () => {
             </motion.button>
 
             <motion.button
+              onClick={() => router.push("/aboutus")}
+              className="px-4 py-1.5 sm:px-5 sm:py-2 text-primary-foreground rounded-lg font-medium sm:font-semibold text-sm sm:text-base hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
+            >
+              About Us
+            </motion.button>
+
+
+
+            
+
+            <motion.button
               onClick={() => window.open("https://www.itramei.ai/", "_blank")}
               className="px-4 py-1.5 sm:px-5 sm:py-2 border-2 border-blue-500 text-primary-foreground rounded-lg font-medium sm:font-semibold text-sm sm:text-base hover:scale-105 transition-transform"
               whileHover={{ scale: 1.05 }}
@@ -122,6 +134,21 @@ const Header: React.FC = () => {
                 >
                   Blogs
                 </Button>
+
+
+                <Button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    router.push("/aboutus");
+                  }}
+                  className="w-full py-3 text-sm sm:text-base"
+                  // variant="outline"
+                >
+                  About Us
+                </Button>
+
+
+
 
                 <Button
                   onClick={() => {

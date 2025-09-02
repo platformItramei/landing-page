@@ -15,8 +15,8 @@ export default function AboutUsPage() {
                         About us
                     </h1>
                     <p className="text-2xl text-gray-300 max-w-2xl mx-auto">
-  Building what raises the standard of human communication
-</p>
+                        Building what raises the standard of human communication
+                    </p>
                 </div>
             </header>
 
