@@ -9,7 +9,7 @@ import { queryClient } from "@/lib/queryClient";
 import Script from "next/script"; // Import Next.js Script component
 
 // Define GTM_ID here or in your environment variables
-const GTM_ID = "G-43B7S3EB12"; 
+const GTM_ID = "GTM-NQ8CBNMN"; 
 
 export const metadata: Metadata = {
   title: "Itramei – Master Every Sales Call",
