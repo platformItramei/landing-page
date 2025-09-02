@@ -5,9 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
-import Script from "next/script"; // Make sure this import is here
+import Script from "next/script";
 
-// ✅ CORRECT: Define the ID with one set of quotes
 const GTM_ID = "GTM-NQ8CBNMN";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* ✅ CORRECT: GTM script with properly inserted variable */}
+        {/* Google Tag Manager Script */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -41,6 +40,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               })(window,document,'script','dataLayer','${GTM_ID}');
             `,
           }}
+        />
+        
+        {/* Termly Resource Blocker Script */}
+        <Script
+          id="termly-script"
+          src="https://app.termly.io/resource-blocker/ea0c6fff-69e1-4064-bb45-66e5df41d0b5?autoBlock=on"
+          strategy="afterInteractive"
         />
       </head>
       <body className="bg-gray-950 text-white">
