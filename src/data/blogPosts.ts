@@ -107,6 +107,138 @@ export const blogPosts = [
     <p>The question isn't whether AI role-play will become standard. The neuroscience and ROI evidence have answered that. The question is whether you'll adopt it while it's still a competitive advantage.</p>
   `,
   },
+{
+  slug: "sales-leaders-see-issues",
+  date: "25 Aug 2025",
+  title: "Sales Leaders: See Issues Before They Cost You Revenue",
+  excerpt: "How to identify and address performance gaps before they impact your quarterly results.",
+  readTime: "5",
+  author: "Niclas Elfstorm",
+  authorRole: "Growth Generalist",
+  authorImage: "/img/niclas_elfstorm.png",
+  image: "/img/blogs/defaultblogs.png",
+  metaDescription: "Identify sales performance issues before they impact revenue. Learn how Itramei's data-driven insights help sales leaders spot skill gaps and coaching opportunities early.",
+  keywords: {
+    primary: ["sales performance monitoring", "early warning sales indicators", "predict sales performance", "sales coaching opportunities"],
+    secondary: ["sales leadership strategies", "sales team analytics", "performance gap identification", "proactive sales management"],
+    semantic: ["data-driven sales insights", "sales skill assessment", "performance trend analysis", "sales coaching effectiveness"]
+  },
+  content: `
+    <h2>The Quiet Erosion of Revenue</h2>
+    <p>Quotas are not lost in a single bad month. They erode quietly, one missed opportunity at a time, until the quarter closes and the gap is too large to close. By the time the numbers reveal the problem, it is too late to fix what caused it.</p>
+    
+    <h2>The Instruments of Sales Performance</h2>
+    <p>The best sales leaders operate like expert pilots scanning their instruments mid‑flight. They are not waiting for turbulence to hit; they are watching for subtle shifts in altitude, speed, and trajectory long before the passengers feel a thing. In sales, those instruments are the skills and behaviors of your team, and catching small deviations early can mean the difference between hitting target and missing it.</p>
+    
+    <h2>Data-Driven Visibility</h2>
+    <p>Itramei gives leaders that kind of visibility. Through realistic, scenario‑based simulations, it captures performance data across dozens of metrics, from how well a rep uncovers needs in discovery, to how confidently they respond under pressure, to whether they can turn objections into momentum. The data turns into actionable insight, showing exactly where to focus coaching for the highest impact.</p>
+    
+    <h2>Proactive Intervention</h2>
+    <p>With this early warning system, you can intervene before deals are lost, address gaps before they become patterns, and scale the habits of your top performers across the team. Quotas stop feeling like a gamble and start becoming the predictable result of a team that is always ready to perform.</p>
+  `,
+},
+{
+  slug: "enablement-strategy-into-skill",
+  date: "2 Sep 2025",
+  title: "Enablement Leaders: Turn Strategy into Measurable Skill",
+  excerpt: "How to ensure your enablement initiatives translate directly to improved sales performance.",
+  readTime: "4",
+  author: "Niclas Elfstorm",
+  authorRole: "Growth Generalist",
+  authorImage: "/img/niclas_elfstorm.png",
+  image: "/img/blogs/defaultblogs.png",
+  metaDescription: "Transform sales enablement strategies into measurable skills. Discover how Itramei helps enablement leaders ensure initiatives are adopted and effective in real sales conversations.",
+  keywords: {
+    primary: ["sales enablement effectiveness", "strategy implementation", "measurable sales skills", "enablement adoption"],
+    secondary: ["sales training ROI", "enablement program success", "skills translation", "sales initiative rollout"],
+    semantic: ["AI-driven role plays", "performance measurement", "training effectiveness", "adoption metrics"]
+  },
+  content: `
+    <h2>The Adoption Challenge</h2>
+    <p>A training initiative is not successful the moment it is launched. It is successful when it is adopted, repeated, and proven effective in real conversations with buyers.</p>
+    <p>For enablement leaders, that is the real challenge. Messaging rollouts, onboarding programs, and process updates often look flawless in the planning stage, but once they hit the field, momentum can stall. Without the right space, structure, and reinforcement, even the best initiatives fade before they deliver lasting impact.</p>
+    
+    <h2>The Blueprint Analogy</h2>
+    <p>It is much like giving a beautifully designed blueprint to a construction crew without ever building a small‑scale model or running through the plan in a controlled environment. The design may be brilliant, but without testing and feedback, the final result can drift far from the original vision.</p>
+    
+    <h2>Eliminating the Strategy-Execution Gap</h2>
+    <p>Itramei ensures that drift never happens. Through AI‑driven, scenario‑based role plays, reps can apply new strategies in a safe but realistic environment where mistakes cost nothing and learning happens fast. Every interaction is measured, every skill gap is visible, and every improvement is backed by specific, immediate feedback.</p>
+    
+    <h2>Measurable Adoption Process</h2>
+    <p>This transforms adoption from a guessing game into a measurable process. Momentum is sustained, execution becomes consistent, and the strategies you create are not just understood, they are lived by the entire sales organization.</p>
+  `,
+},
+{
+  slug: "cro-revenue-engine",
+  date: "5 Sep 2025",
+  title: "Chief Revenue Officers: Build a Revenue Engine That Never Stalls",
+  excerpt: "How to create predictable revenue growth through systematic performance optimization.",
+  readTime: "6",
+  author: "Niclas Elfstorm",
+  authorRole: "Growth Generalist",
+  authorImage: "/img/niclas_elfstorm.png",
+  image: "/img/blogs/defaultblogs.png",
+  metaDescription: "Build a predictable revenue engine that consistently delivers results. Learn how Itramei helps CROs identify performance gaps early and optimize sales effectiveness across the organization.",
+  keywords: {
+    primary: ["revenue predictability", "sales performance optimization", "revenue engine", "CRO strategies"],
+    secondary: ["sales efficiency", "performance gap analysis", "revenue growth", "sales team optimization"],
+    semantic: ["performance analytics", "skill gap identification", "revenue forecasting", "sales effectiveness"]
+  },
+  content: `
+    <h2>The Compound Cost of Small Inefficiencies</h2>
+    <p>A revenue miss is rarely the result of one bad quarter. It begins earlier, in slower ramp times, uneven win rates, and skill gaps that quietly drag down performance across the team. By the time these issues surface in the forecast, they have already cost you pipeline, predictability, and growth.</p>
+    
+    <h2>The High-Performance Engine Mindset</h2>
+    <p>CROs cannot afford to navigate by lagging indicators. The most effective revenue leaders run their teams like high‑performance engines, monitoring every moving part to ensure consistent output. They know that small inefficiencies left unchecked compound over time, turning into lost deals and missed market opportunities.</p>
+    
+    <h2>Precision Monitoring for Sales Performance</h2>
+    <p>Itramei gives CROs that level of precision. By replicating the pressure and complexity of real sales conversations, it generates measurable performance data across the skills that directly impact revenue, from how quickly new hires reach quota to how effectively seasoned reps handle competitive deals. These insights expose weaknesses before they cost you deals, while also revealing the behaviors of top performers so they can be replicated at scale.</p>
+    
+    <h2>The Predictability Dividend</h2>
+    <p>With this level of control, you can shorten ramp times, increase win rates, and keep the sales engine running at peak performance quarter after quarter. Forecasts become more accurate, revenue becomes more predictable, and growth stops depending on chance.</p>
+    
+    <h2>Beyond Hitting Numbers</h2>
+    <p>For CROs, it is not just about hitting the number. It is about building a system that ensures the number is never in doubt.</p>
+  `,
+},
+{
+  slug: "cro-training-revenue-engine",
+  date: "10 Sep 2025",
+  title: "Chief Revenue Officers: Turn Training into a Measurable Revenue Engine",
+  excerpt: "How to transform sales training from a cost center to a revenue-driving function.",
+  readTime: "5",
+  author: "Niclas Elfstorm",
+  authorRole: "Growth Generalist",
+  authorImage: "/img/niclas_elfstorm.png",
+  image: "/img/blogs/defaultblogs.png",
+  metaDescription: "Transform sales training into a measurable revenue driver. Learn how Itramei helps CROs connect training investments directly to revenue outcomes and performance improvements.",
+  keywords: {
+    primary: ["training ROI", "revenue-driven training", "sales training effectiveness", "measurable training outcomes"],
+    secondary: ["training impact measurement", "sales performance improvement", "training investment optimization", "revenue-focused enablement"],
+    semantic: ["performance analytics", "skill application measurement", "training effectiveness", "revenue correlation"]
+  },
+  content: `
+    <h2>Training with Purpose: The Revenue Connection</h2>
+    <p>For a CRO, training is not about ticking boxes or filling calendars. It is about moving numbers. If it does not accelerate revenue, improve predictability, and strengthen the pipeline, it is a distraction.</p>
+    
+    <h2>The Performance Tuning Analogy</h2>
+    <p>The problem is that many training programs run like a race car with the wrong tune. The parts are there, the engine runs, but it is not optimized for peak speed and performance. The potential is wasted, and every lap takes longer than it should.</p>
+    
+    <h2>Precision Engineering for Revenue Performance</h2>
+    <p>Itramei keeps that engine running at peak performance. Ramp times shrink as new hires hit the ground with confidence, winning early deals that compound over the year. Win rates climb as experienced sellers sharpen the skills that make the difference in competitive situations. Deal velocity improves as managers shift from repetitive ride‑alongs to strategic interventions that move high‑value opportunities forward.</p>
+    
+    <h2>The Tangible ROI of Effective Training</h2>
+    <p>The ROI is tangible and immediate:</p>
+    <ul>
+      <li><strong>Faster time‑to‑quota</strong> generates more revenue per rep each year</li>
+      <li><strong>Higher win rates</strong> convert more of the existing pipeline into closed business</li>
+      <li><strong>Lower coaching costs</strong> deliver more development without additional headcount</li>
+    </ul>
+    
+    <h2>From Cost Center to Revenue Driver</h2>
+    <p>This is not training for training's sake. It is precision engineering for your revenue engine, a lever that keeps performance at full throttle and moves the forecast upward, quarter after quarter.</p>
+  `,
+},
   {
     slug: "scale-coaching",
     date: "15 Aug 2025",
