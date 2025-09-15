@@ -41,12 +41,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
+
+
         
         {/* Termly Resource Blocker Script */}
         <Script
           id="termly-script"
           src="https://app.termly.io/resource-blocker/ea0c6fff-69e1-4064-bb45-66e5df41d0b5?autoBlock=on"
-          strategy="afterInteractive"
+          // strategy="afterInteractive"
         />
       </head>
       <body className="bg-gray-950 text-white">
