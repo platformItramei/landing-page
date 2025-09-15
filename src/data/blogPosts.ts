@@ -6,9 +6,9 @@ export const blogPosts = [
     title: "Why Top Sales Teams Practice With AI, Not Humans",
     excerpt: "Discover how AI-powered practice delivers 75% learning retention compared to just 10% from traditional role-playing.",
     readTime: "6",
-    author: "Niclas Elfstorm",
-    authorRole: "Growth Generalist",
-    authorImage: "/img/niclas_elfstorm.png",
+    author: "",
+    authorRole: "",
+    authorImage: "",
     image: "/img/blogs/beyond-ai-roleplay.png",
     metaDescription: "Learn why AI-powered sales practice delivers 75% retention vs. 10% from traditional methods. Discover the neuroscience behind effective sales training and real-world results from companies using AI simulations.",
     citations: [
