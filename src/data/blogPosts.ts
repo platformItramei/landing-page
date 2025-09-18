@@ -116,7 +116,7 @@ export const blogPosts = [
   author: "Niclas Elfstorm",
   authorRole: "Growth Generalist",
   authorImage: "/img/niclas_elfstorm.png",
-  image: "/img/blogs/sales_leaders_see_issues_before _they_cost_you_revenue.png",
+  image: "/img/blogs/defaultblogs.png",
   metaDescription: "Identify sales performance issues before they impact revenue. Learn how Itramei's data-driven insights help sales leaders spot skill gaps and coaching opportunities early.",
   keywords: {
     primary: ["sales performance monitoring", "early warning sales indicators", "predict sales performance", "sales coaching opportunities"],
@@ -146,7 +146,7 @@ export const blogPosts = [
   author: "Niclas Elfstorm",
   authorRole: "Growth Generalist",
   authorImage: "/img/niclas_elfstorm.png",
-  image: "/img/blogs/measurable_skill.png",
+  image: "/img/blogs/defaultblogs.png",
   metaDescription: "Transform sales enablement strategies into measurable skills. Discover how Itramei helps enablement leaders ensure initiatives are adopted and effective in real sales conversations.",
   keywords: {
     primary: ["sales enablement effectiveness", "strategy implementation", "measurable sales skills", "enablement adoption"],
@@ -177,7 +177,7 @@ export const blogPosts = [
   author: "Niclas Elfstorm",
   authorRole: "Growth Generalist",
   authorImage: "/img/niclas_elfstorm.png",
-  image: "/img/blogs/revenue_enginge that_never_stalls.png",
+  image: "/img/blogs/defaultblogs.png",
   metaDescription: "Build a predictable revenue engine that consistently delivers results. Learn how Itramei helps CROs identify performance gaps early and optimize sales effectiveness across the organization.",
   keywords: {
     primary: ["revenue predictability", "sales performance optimization", "revenue engine", "CRO strategies"],
@@ -210,7 +210,7 @@ export const blogPosts = [
   author: "Niclas Elfstorm",
   authorRole: "Growth Generalist",
   authorImage: "/img/niclas_elfstorm.png",
-  image: "/img/blogs/turn_training_into_a_revenue_enginge.png",
+  image: "/img/blogs/defaultblogs.png",
   metaDescription: "Transform sales training into a measurable revenue driver. Learn how Itramei helps CROs connect training investments directly to revenue outcomes and performance improvements.",
   keywords: {
     primary: ["training ROI", "revenue-driven training", "sales training effectiveness", "measurable training outcomes"],
